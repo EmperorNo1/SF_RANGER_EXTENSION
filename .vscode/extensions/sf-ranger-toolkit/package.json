@@ -2,10 +2,14 @@
   "name": "sf-ranger-toolkit",
   "displayName": "SF Ranger Toolkit",
   "description": "Lightweight Salesforce org manager: view orgs, open, reauth, logout, set default, get token",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "sf-ranger-labs",
   "author": "SF Ranger",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EmperorNo1/SF_RANGER_EXTENSION.git"
+  },
   "icon": "icons/icon.png",
   "engines": {
     "vscode": "^1.60.0"
