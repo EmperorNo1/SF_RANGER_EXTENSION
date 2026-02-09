@@ -1,0 +1,6 @@
+{
+  // Enable the custom workspace extension
+  "extensions.autoUpdate": true,
+  "extensions.ignoreRecommendations": true
+}
+

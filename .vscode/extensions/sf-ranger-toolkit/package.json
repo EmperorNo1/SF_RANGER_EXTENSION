@@ -1,0 +1,79 @@
+{
+  "name": "sf-ranger-toolkit",
+  "displayName": "SF Ranger Toolkit",
+  "description": "Lightweight Salesforce org manager: view orgs, open, reauth, logout, set default, get token",
+  "version": "1.0.0",
+  "publisher": "sf-ranger-labs",
+  "author": "SF Ranger",
+  "license": "MIT",
+  "icon": "icons/icon.png",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "salesforce",
+    "org-manager",
+    "toolkit",
+    "ranger",
+    "sfdx",
+    "sf"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "packagexml-sidebar",
+          "title": "SF Ranger Tools",
+          "icon": "icons/activity-bar-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "packagexml-sidebar": [
+        {
+          "type": "webview",
+          "id": "sfRangerToolkit.orgManager",
+          "name": "Org Manager",
+          "icon": "icons/org-manager-icon.png",
+          "contextualTitle": "SF Org Manager"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "SF Ranger Toolkit",
+      "properties": {
+        "sfRangerToolkit.maxBufferSizeMB": {
+          "type": "number",
+          "default": 50,
+          "minimum": 20,
+          "maximum": 500,
+          "description": "Maximum buffer size (in MB) for SFDX command execution. Increase for very large orgs."
+        },
+        "sfRangerToolkit.orgCacheDurationSeconds": {
+          "type": "number",
+          "default": 300,
+          "minimum": 30,
+          "maximum": 3600,
+          "description": "Duration (in seconds) to cache org list. Default: 300 (5 minutes)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.7.0",
+    "jest": "^29.7.0"
+  },
+  "dependencies": {}
+}
